@@ -12,6 +12,8 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class FibonacciSimpleTest {
+	
+	public static String unusedVariable = "haha";
 	@Parameters
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] { { 0, 0 }, { 1, 1 }, { 2, 1 }, { 3, 2 }, { 4, 3 }, { 5, 5 }, { 6, 8 } });
@@ -22,8 +24,13 @@ public class FibonacciSimpleTest {
 	private int fExpected;
 
 	public FibonacciSimpleTest(int input, int expected) {
-		fInput = input;
-		fExpected = expected;
+		try {
+			fInput = input;
+			fExpected = expected;
+		} catch (RuntimeException ex ) {
+			
+		}
+		
 	}
 
 	@Test
