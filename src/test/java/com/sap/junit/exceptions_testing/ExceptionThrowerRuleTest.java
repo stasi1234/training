@@ -13,7 +13,7 @@ public class ExceptionThrowerRuleTest {
 	@Test
 	public void testExceptionMessage() throws IndexOutOfBoundsException {
 	    thrown.expect(IndexOutOfBoundsException.class);
-	    thrown.expectMessage("Index: 0, Size: 8");
+	    thrown.expectMessage("Index: 0, Size: 0");
 	    et.throwIndexOutOfBoundsException(); // execution will never get past this line
 	}
 	
